@@ -1,10 +1,10 @@
+import bcrypt
 from sqlalchemy.sql.expression import null
 from app.db import Base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import validates
 
 salt = bcrypt.gensalt()
-
 class User(Base):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True)
